@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5e1e1; /* Light pink background */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff5f5f; /* Dark pink for the title */
+        }
+        .question {
+            display: none;
+            margin-bottom: 20px;
+        }
+        #result {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valentine's Quiz</h1>
+    <div id="question1" class="question" style="display: block;">
+        <p>How are you?</p>
+        <button onclick="nextQuestion('yes', 'question1')">Yes</button>
+        <button onclick="nextQuestion('no', 'question1')">No</button>
+    </div>
+    <div id="question2" class="question">
+        <p>Do you love me?</p>
+        <button onclick="nextQuestion('yes', 'question2')">Yes</button>
+        <button onclick="nextQuestion('no', 'question2')">No</button>
+    </div>
+    <div id="question3" class="question">
+        <p>Are you sure?</p>
+        <button onclick="nextQuestion('yes', 'question3')">Yes</button>
+        <button onclick="nextQuestion('no', 'question3')">No</button>
+    </div>
+    <div id="question4" class="question">
+        <p>Do I love you?</p>
+        <button onclick="nextQuestion('yes', 'question4')">Yes</button>
+        <button onclick="nextQuestion('no', 'question4')">No</button>
+    </div>
+    <div id="question5" class="question">
+        <p>If you said no you're stupid. Are you sure?</p>
+        <button onclick="nextQuestion('yes', 'question5')">Yes</button>
+        <button onclick="nextQuestion('no', 'question5')">No</button>
+    </div>
+    <div id="question6" class="question">
+        <p>Will you marry me?</p>
+        <button onclick="nextQuestion('yes', 'question6')">Yes</button>
+        <button onclick="nextQuestion('no', 'question6')">No</button>
+    </div>
+    <div id="question7" class="question">
+        <p>Will you be my forever?</p>
+        <button onclick="nextQuestion('yes', 'question7')">Yes</button>
+        <button onclick="nextQuestion('no', 'question7')">No</button>
+    </div>
+    <div id="question8" class="question">
+        <p>Will you love me forever and ever?</p>
+        <button onclick="nextQuestion('yes', 'question8')">Yes</button>
+        <button onclick="nextQuestion('no', 'question8')">No</button>
+    </div>
+    <div id="question9" class="question">
+        <p>Will you be my Valentine?</p>
+        <button onclick="nextQuestion('yes', 'question9')">Yes</button>
+        <button onclick="nextQuestion('no', 'question9')">No</button>
+    </div>
+    <div id="result">
+        <h2>You are my Valentine!</h2>
+        <img src="love.png" alt="You are my Valentine!">
+        
+    </div>
+
+    <script>
+        let currentQuestionIndex = 1;
+
+        function nextQuestion(answer, questionId) {
+            document.getElementById(questionId).style.display = 'none';
+            currentQuestionIndex++;
+            if (currentQuestionIndex === 10) {
+                document.getElementById('result').style.display = 'block';
+            } else {
+                document.getElementById('question' + currentQuestionIndex).style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
